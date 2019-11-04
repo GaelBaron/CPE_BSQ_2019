@@ -18,6 +18,25 @@ int error_next(char *buff)
             if (my_strlen(tab[i]) != my_strlen(tab[1]))
                 return (84);
     }
+    return (not_matching(buff));
+}
+
+int not_matching(char *buff)
+{
+    int size = 0;
+    char *str;
+    int j = 0;
+
+    for (int i = 0; buff[i] != '\n'; i++)
+        size++;
+    str = malloc(sizeof(char) * (size + 1));
+    if (!str)
+        return (84);
+    for (; buff[j] != '\n'; j++)
+        str[j] = buff[j];
+    str[j] = '\0';
+    if (my_atoi(str) != my_n_count(buff))
+        return (84);
     return (0);
 }
 

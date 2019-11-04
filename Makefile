@@ -14,7 +14,8 @@ SRCS    =       src/bsq.c			\
 SRCS2 	=	src/main.c
 
 TEST 	=	tests/tests_error_gestion.c	\
-		tests/test_algo.c
+		tests/test_algo.c		\
+		tests/tests_error.c
 
 
 OBJ     =       $(SRCS:.c=.o)

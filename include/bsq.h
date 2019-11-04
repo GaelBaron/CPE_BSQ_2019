@@ -49,5 +49,6 @@ int error_next(char *buff);
 int is_it_number(char *buff);
 int is_it_a_map(char *buff);
 int error_gestion(int ac, char **av, char *buff);
+int not_matching(char *buff);
 
 #endif
