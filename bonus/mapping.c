@@ -29,10 +29,10 @@ char **mapping(char **tab, maximum max)
 void info_square(maximum max)
 {
     my_putstr("------->SQUARE INFOS:\n-First case placement:");
-    my_putstr("\n\t\tx: ");
-    my_put_nbr(max.i_pos);
-    my_putstr("\n\t\ty: ");
+    my_putstr("\n\t\tline:   ");
     my_put_nbr(max.j_pos);
+    my_putstr("\n\t\tcolumn: ");
+    my_put_nbr(max.i_pos + 1);
     my_putstr("\n-Square size: ");
     my_put_nbr(max.size);
     my_putchar('\n');
