@@ -11,7 +11,7 @@
 int main(int ac, char **av)
 {
     if (ac == 1) {
-        my_putstr("DEMERDE TOI CONNARD\n");
+        my_putstr("USAGE:\n./bsq <file_descriptor>\n");
     }
     else
         return (bsq(ac, av));

@@ -11,14 +11,11 @@
 int error_next(char *buff)
 {
     char **tab;
-    int len;
-    int size = my_n_count(buff);
 
-    if (size > 1) {
+    if (my_n_count(buff) > 1) {
         tab = my_str_to_word_tab(buff);
-        len = my_strlen(tab[1]);
         for (int i = 2; tab[i]; i++)
-            if (my_strlen(tab[i]) != len)
+            if (my_strlen(tab[i]) != my_strlen(tab[1]))
                 return (84);
     }
     return (0);
@@ -47,8 +44,6 @@ int is_it_a_map(char *buff)
 
 int error_gestion(int ac, char **av, char *buff)
 {
-    int err = 0;
-
     if (ac > 2)
         return (84);
     if (my_n_count(buff) <= 0)
@@ -57,6 +52,5 @@ int error_gestion(int ac, char **av, char *buff)
         return (84);
     if (is_it_a_map(buff) == NO)
         return (84);
-    err = error_next(buff);
-    return (err);
+    return (error_next(buff));
 }

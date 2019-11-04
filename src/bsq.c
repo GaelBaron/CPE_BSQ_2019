@@ -11,7 +11,7 @@
 void freeing(char *buff, char **tab)
 {
     free(buff);
-    for (int i = 0; tab[i] != NULL; i++)
+    for (int i = 0; tab[i]; i++)
         free(tab[i]);
     free(tab);
 }
