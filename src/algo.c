@@ -37,10 +37,8 @@ int test_columns(char **str, int i, int j, int size)
     return (YES);
 }
 
-int test_squares(char **str, int i, int j)
+int test_squares(char **str, int i, int j, int size)
 {
-    int size = 0;
-
     if (test_columns(str, i, j, size) == YES)
         while (test_columns(str, i, j, size) == YES
             && size <= my_atoi(str[0]))
@@ -57,10 +55,10 @@ maximum algo(char **str, maximum max)
         while (str[j][i] != '\0') {
             if (is_it_ok(str[j][i]) == NO)
                 i++;
-            else if (max.size < test_squares(str, i, j)) {
+            else if (max.size < test_squares(str, i, j, max.size)) {
                 max.j_pos = j;
                 max.i_pos = i;
-                max.size = test_squares(str, max.i_pos, max.j_pos);
+                max.size = test_squares(str, max.i_pos, max.j_pos, max.size);
                 i++;
             }
             else
