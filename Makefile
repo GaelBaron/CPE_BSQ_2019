@@ -8,7 +8,8 @@
 SRCS    =       src/bsq.c			\
 		src/algo.c			\
 		src/my_str_to_word_tab.c	\
-		src/mapping.c
+		src/mapping.c			\
+		src/error.c
 
 SRCS2 	=	src/main.c
 

@@ -39,9 +39,15 @@ maximum algo(char **str, maximum max);
 
 /*my_str_to_word_tab.c*/
 char **my_str_to_word_tab(char *str);
-int my_ncout(char *str);
+int my_n_count(char *str);
 
 /*mapping.c*/
 char **mapping(char **tab, maximum max);
+
+/*error.c*/
+int error_next(char *buff);
+int is_it_number(char *buff);
+int is_it_a_map(char *buff);
+int error_gestion(int ac, char **av, char *buff);
 
 #endif

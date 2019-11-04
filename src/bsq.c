@@ -56,6 +56,8 @@ int bsq(int ac, char **av)
 
     if (buff == NULL)
         return (84);
+    if (error_gestion(ac, av, buff) == 84)
+        return (84);
     max.size = 0;
     max.i_pos = 0;
     max.j_pos = 1;

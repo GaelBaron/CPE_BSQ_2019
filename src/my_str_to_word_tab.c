@@ -8,7 +8,7 @@
 #include "../include/bsq.h"
 #include "../include/my.h"
 
-int my_ncount(char *str)
+int my_n_count(char *str)
 {
     int count = 0;
 
@@ -20,7 +20,7 @@ int my_ncount(char *str)
 
 char **my_str_to_word_tab(char *str)
 {
-    int lines = my_ncount(str);
+    int lines = my_n_count(str);
     char **tab = malloc(sizeof(char *) * (lines + 2));
     int n = 0;
     int j = 0;
