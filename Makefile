@@ -13,7 +13,9 @@ SRCS    =       src/bsq.c			\
 
 SRCS2 	=	src/main.c
 
-##TEST 	=
+TEST 	=	tests/tests_error_gestion.c	\
+		tests/test_algo.c
+
 
 OBJ     =       $(SRCS:.c=.o)
 
