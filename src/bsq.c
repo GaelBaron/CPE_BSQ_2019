@@ -36,7 +36,7 @@ char *converter(char *av, char *buffer)
     if (err == -1)
         return (NULL);
     buffer = malloc(sizeof(char) * (status.st_size + 1));
-    if (buffer == NULL)
+    if (!buffer)
         return (NULL);
     err = read(file_descriptor, buffer, (status.st_size + 1));
     if (err == -1)
@@ -54,7 +54,7 @@ int bsq(int ac, char **av)
     maximum max;
     char **tab;
 
-    if (buff == NULL)
+    if (!buff)
         return (84);
     if (error_gestion(ac, av, buff) == 84)
         return (84);

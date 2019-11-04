@@ -29,7 +29,7 @@ int test_line(char *str, int i, int size)
 int test_columns(char **str, int i, int j, int size)
 {
     for (int n = j; j <= (n + size); j++) {
-        if (str[j] == NULL)
+        if (!str[j])
             return (NO);
         if (test_line(str[j], i, size) == NO)
             return (NO);
@@ -50,7 +50,7 @@ maximum algo(char **str, maximum max)
 {
     int i = 0;
 
-    for (int j = 1; str[j] != NULL; j++) {
+    for (int j = 1; str[j]; j++) {
         i = 0;
         while (str[j][i] != '\0') {
             if (is_it_ok(str[j][i]) == NO)
