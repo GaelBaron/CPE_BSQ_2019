@@ -8,6 +8,8 @@
 #include "../include/my.h"
 #include "../include/bsq.h"
 
+void info_square(maximum max);
+
 void freeing(char *buff, char **tab)
 {
     free(buff);
@@ -78,6 +80,7 @@ int bsq(int ac, char **av)
     max = algo(tab, max);
     tab = mapping(tab, max);
     map_print(tab);
+    info_square(max);
     freeing(buff, tab);
     return (0);
 }
