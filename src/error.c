@@ -11,6 +11,8 @@
 int error_next(char *buff)
 {
     char **tab;
+    int i = 0;
+    int nb = 0;
 
     if (my_n_count(buff) > 1) {
         tab = my_str_to_word_tab(buff);
@@ -18,6 +20,13 @@ int error_next(char *buff)
             if (my_strlen(tab[i]) != my_strlen(tab[1]))
                 return (84);
     }
+    while (buff[i] != '\n')
+        i++;
+    for (; buff[i] != '\0'; i++)
+        if (buff[i] == '.')
+            nb++;
+    if (nb == 0)
+        return (84);
     return (not_matching(buff));
 }
 
