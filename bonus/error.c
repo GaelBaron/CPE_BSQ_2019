@@ -45,7 +45,7 @@ int not_matching(char *buff)
     for (; buff[j] != '\n'; j++)
         str[j] = buff[j];
     str[j] = '\0';
-    if (my_atoi(str) != my_n_count(buff))
+    if (my_atoi(str) != my_n_count(buff) - 1)
         return (84);
     return (0);
 }

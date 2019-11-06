@@ -20,18 +20,21 @@ void freeing(char *buff, char **tab)
 
 void map_print(char **tab)
 {
+    int one_two = 0;
+
     for (int i = 1; tab[i]; i++) {
         for (int j = 0; tab[i][j]; j++) {
-            if (tab[i][j] == 'o'){
-                my_putstr("\033[0;36m");
-                my_putstr("o");
-                my_putstr("\033[0m");
+            if (tab[i][j] == 'o') {
+                if (one_two % 2 == 0)
+                    my_putstr("\033[0;35mo\033[0m");
+                else
+                    my_putstr("\033[0;36mo\033[0m");
+                one_two++;
             }
-            else if (tab[i][j] == 'x'){
-                my_putstr("\033[0;33m");
-                my_putstr("x");
-                my_putstr("\033[0m");
-            }
+            else if (tab[i][j] == 'x')
+                my_putstr("\033[0;33mx\033[0m");
+            else if (tab[i][j] == '.')
+                    my_putstr("\033[0;31m.\033[0m");
             else
                 my_putchar(tab[i][j]);
         }

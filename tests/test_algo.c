@@ -12,6 +12,8 @@
 #include "../include/bsq.h"
 #include "../include/my.h"
 
+char *converter(char *av, char *buffer);
+
 void all_print(void)
 {
     cr_redirect_stdout();
@@ -33,6 +35,16 @@ Test(bs_sec, out_exit, .init=all_print)
     int ac = 2;
     char *av[] = {"./bsq", "tests/map/map_test_1_10", NULL};
     char buff[] = "oxooooooo..........\n";
+
+    bsq(ac, av);
+    cr_assert_stdout_eq_str(buff, "");
+}
+
+Test(medium, out_exit, .init=all_print)
+{
+    int ac = 2;
+    char *av[] = {"./bsq", "tests/map/map_100_100", NULL};
+    char *buff = converter(av[1], buff);
 
     bsq(ac, av);
     cr_assert_stdout_eq_str(buff, "");
