@@ -16,8 +16,9 @@ int error_next(char *buff)
 
     if (my_n_count(buff) > 1) {
         tab = my_str_to_word_tab(buff);
-        for (int i = 2; tab[i]; i++)
-            if (my_strlen(tab[i]) != my_strlen(tab[1]))
+        for (int i = 1; tab[i]; i++)
+            if (my_strlen(tab[i]) != my_strlen(tab[1])
+                && my_strlen(tab[i]) != 0)
                 return (84);
     }
     while (buff[i] != '\n')
