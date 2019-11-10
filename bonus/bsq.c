@@ -34,9 +34,13 @@ void map_print(char **tab)
             else if (tab[i][j] == 'x')
                 my_putstr("\033[0;33mx\033[0m");
             else if (tab[i][j] == '.')
+                if (one_two % 2 == 0)
+                    my_putstr("\033[0;34m.\033[0m");
+                else
                     my_putstr("\033[0;31m.\033[0m");
             else
                 my_putchar(tab[i][j]);
+            one_two++;
         }
         my_putchar('\n');
     }

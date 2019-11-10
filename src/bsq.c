@@ -19,8 +19,10 @@ void freeing(char *buff, char **tab)
 void map_print(char **tab)
 {
     for (int i = 1; tab[i]; i++) {
-        my_putstr(tab[i]);
-        my_putchar('\n');
+        if (my_strlen(tab[i]) > 1 && tab[i][0] != '\n') {
+            my_putstr(tab[i]);
+            my_putchar('\n');
+        }
     }
 }
 
