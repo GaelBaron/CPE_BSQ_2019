@@ -60,6 +60,8 @@ int bsq(int ac, char **av)
         return (84);
     if (error_gestion(ac, av, buff) == 84)
         return (84);
+    if (special_case(buff) == 1)
+        return (0);
     max.size = 0;
     max.i_pos = 0;
     max.j_pos = 1;

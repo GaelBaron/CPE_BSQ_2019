@@ -18,6 +18,13 @@ int my_n_count(char *str)
     return (count);
 }
 
+char **add_end(int j, int n, int lines, char **tab)
+{
+    tab[j][n] = '\0';
+    tab[lines + 1] = NULL;
+    return (tab);
+}
+
 char **my_str_to_word_tab(char *str)
 {
     int lines = my_n_count(str);
@@ -38,7 +45,6 @@ char **my_str_to_word_tab(char *str)
         else
             tab[j][n] = str[i];
     }
-    tab[j][n] = '\0';
-    tab[lines + 1] = NULL;
+    tab = add_end(j, n, lines, tab);
     return (tab);
 }

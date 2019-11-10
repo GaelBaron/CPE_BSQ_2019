@@ -25,3 +25,16 @@ char **mapping(char **tab, maximum max)
     }
     return (tab);
 }
+
+int special_case(char *buff)
+{
+    int i = 0;
+
+    while (buff[i])
+        i++;
+    if (my_n_count(buff) == 2 && buff[i - 2] == '.') {
+        my_putstr("x\n");
+        return (1);
+    }
+    return (0);
+}
