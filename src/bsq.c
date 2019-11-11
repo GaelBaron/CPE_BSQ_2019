@@ -50,18 +50,11 @@ char *converter(char *av, char *buffer)
     return (buffer);
 }
 
-int bsq(int ac, char **av)
+void starting(char *buff)
 {
-    char *buff = converter(av[1], buff);
     maximum max;
     char **tab;
 
-    if (!buff)
-        return (84);
-    if (error_gestion(ac, av, buff) == 84)
-        return (84);
-    if (special_case(buff) == 1)
-        return (0);
     max.size = 0;
     max.i_pos = 0;
     max.j_pos = 1;
@@ -70,5 +63,23 @@ int bsq(int ac, char **av)
     tab = mapping(tab, max);
     map_print(tab);
     freeing(buff, tab);
+}
+
+int bsq(int ac, char **av)
+{
+    char *buff = converter(av[1], buff);
+
+    if (!buff)
+        return (84);
+    if (error_gestion(ac, av, buff) == 84)
+        return (84);
+    if (special_case(buff) == 1)
+        return (0);
+    if(is_there_place(buff) == NO) {
+        my_putstr(buff);
+        return (0);
+    }
+    else
+        starting(buff);
     return (0);
 }

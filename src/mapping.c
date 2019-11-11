@@ -26,6 +26,14 @@ char **mapping(char **tab, maximum max)
     return (tab);
 }
 
+int is_there_place(char *buff)
+{
+    for (int i = 0; buff[i]; i++)
+        if (buff[i] == '.')
+            return (YES);
+    return (NO);
+}
+
 int special_case(char *buff)
 {
     int i = 0;
