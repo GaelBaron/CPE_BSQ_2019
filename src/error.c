@@ -22,13 +22,6 @@ int error_next(char *buff)
                 return (84);
         }
     }
-    while (buff[i] != '\n')
-        i++;
-    for (; buff[i] != '\0'; i++)
-        if (buff[i] == '.')
-            nb++;
-    if (nb == 0)
-        return (84);
     return (not_matching(buff));
 }
 
