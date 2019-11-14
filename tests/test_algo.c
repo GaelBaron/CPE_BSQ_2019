@@ -45,7 +45,7 @@ Test(medium, out_exit, .init=all_print)
     int ac = 2;
     char *buffer;
     char *av[] = {"./bsq", "tests/map/map_100_100", NULL};
-    char *buff = converter("../tests/map/solved_map_100_100", buffer);
+    char *buff = converter("tests/map/solved_map_100_100", buffer);
 
     bsq(ac, av);
     cr_assert_stdout_eq_str(buff, "");
