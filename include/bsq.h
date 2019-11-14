@@ -43,6 +43,7 @@ int my_n_count(char *str);
 
 /*mapping.c*/
 char **mapping(char **tab, maximum max);
+void my_mapp_print(char **tab);
 int special_case(char *buff);
 int is_there_place(char *buff);
 

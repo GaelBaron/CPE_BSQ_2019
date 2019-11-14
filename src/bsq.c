@@ -19,7 +19,7 @@ void freeing(char *buff, char **tab)
 void map_print(char **tab)
 {
     for (int i = 1; tab[i]; i++) {
-        if (my_strlen(tab[i]) > 1 && tab[i][0] != '\n') {
+        if (my_strlen(tab[i]) >= 1 && tab[i][0] != '\n') {
             my_putstr(tab[i]);
             my_putchar('\n');
         }
@@ -76,7 +76,7 @@ int bsq(int ac, char **av)
     if (special_case(buff) == 1)
         return (0);
     if(is_there_place(buff) == NO) {
-        my_putstr(buff);
+        my_mapp_print(my_str_to_word_tab(buff));
         return (0);
     }
     else

@@ -26,6 +26,16 @@ char **mapping(char **tab, maximum max)
     return (tab);
 }
 
+void my_mapp_print(char **tab)
+{
+    for (int i = 1; tab[i]; i++) {
+        if (my_strlen(tab[i]) >= 1 && tab[i][0] != '\n') {
+            my_putstr(tab[i]);
+            my_putchar('\n');
+        }
+    }
+}
+
 int is_there_place(char *buff)
 {
     for (int i = 0; buff[i]; i++)
